@@ -1,0 +1,180 @@
+category	provider	model_files	endpoint	env	note
+open+price	poe	137	https://api.poe.com/v1/models	POE_API_KEY	prices inline, no key
+open+price	zenmux	120	https://zenmux.ai/api/v1/models	ZENMUX_API_KEY	prices inline, no key
+open+price	orcarouter	117	https://api.orcarouter.ai/v1/models	ORCAROUTER_API_KEY	prices inline, no key
+open+price	novita-ai	107	https://api.novita.ai/openai/models	NOVITA_API_KEY	prices inline, no key
+open+price	impossibl	76	https://api.impossibl.com/v1/models	IMPOSSIBL_API_KEY	prices inline, no key
+open+price	jiekou	61	https://api.jiekou.ai/openai/models	JIEKOU_API_KEY	prices inline, no key
+open+price	kenari	59	https://kenari.id/v1/models	KENARI_API_KEY	prices inline, no key
+open+price	fastrouter	47	https://go.fastrouter.ai/api/v1/models	FASTROUTER_API_KEY	prices inline, no key
+open+price	nearai	37	https://cloud-api.near.ai/v1/models	NEARAI_API_KEY	prices inline, no key
+open+price	llmtr	32	https://llmtr.com/v1/models	LLMTR_API_KEY	prices inline, no key
+open+price	crof	23	https://crof.ai/v1/models	CROF_API_KEY	prices inline, no key
+open+price	neuralwatt	21	https://api.neuralwatt.com/v1/models	NEURALWATT_API_KEY	prices inline, no key
+open+price	meganova	19	https://api.meganova.ai/v1/models	MEGANOVA_API_KEY	prices inline, no key
+open+price	io-net	17	https://api.intelligence.io.solutions/api/v1/models	IOINTELLIGENCE_API_KEY	prices inline, no key
+open+price	routing-run	15	https://api.routing.run/v1/models	ROUTING_RUN_API_KEY	prices inline, no key
+open+price	xpersona	13	https://www.xpersona.co/v1/models	XPERSONA_API_KEY	prices inline, no key
+open+price	berget	11	https://api.berget.ai/v1/models	BERGET_API_KEY	prices inline, no key
+open+price	vultr	10	https://api.vultrinference.com/v1/models	VULTR_API_KEY	prices inline, no key
+open+price	synthetic	9	https://api.synthetic.new/openai/v1/models	SYNTHETIC_API_KEY	prices inline, no key
+open+price	the-grid-ai	9	https://api.thegrid.ai/v1/models	THEGRID_API_KEY	prices inline, no key
+open+price	umans-ai-coding-plan	8	https://api.code.umans.ai/v1/models	UMANS_AI_CODING_PLAN_API_KEY	prices inline, no key
+open+price	trustedrouter	7	https://api.trustedrouter.com/v1/models	TRUSTEDROUTER_API_KEY	prices inline, no key
+open+price	umans-ai	7	https://api.code.umans.ai/v1/models	UMANS_AI_API_KEY	prices inline, no key
+open+price	friendli	6	https://api.friendli.ai/serverless/v1/models	FRIENDLI_TOKEN	prices inline, no key
+open+price	wafer.ai	5	https://pass.wafer.ai/v1/models	WAFER_API_KEY	prices inline, no key
+open+price	lilac	4	https://api.getlilac.com/v1/models	LILAC_API_KEY	prices inline, no key
+open+price	inception	2	https://api.inceptionlabs.ai/v1/models	INCEPTION_API_KEY	prices inline, no key
+open+price	iteracompute	2	https://api.iteracompute.com/v1/models	ITERACOMPUTE_API_KEY	prices inline, no key
+open+price	kosmik	1	https://api.koscompute.com/v1/models	KOSMIK_API_KEY	prices inline, no key
+open+price	llmtech	1	https://api.llmtech.eu/v1/models	LLMTECH_API_KEY	prices inline, no key
+open+ids	abacus	108	https://routellm.abacus.ai/v1/models	ABACUS_API_KEY	open list, no cost fields
+open+ids	nvidia	103	https://integrate.api.nvidia.com/v1/models	NVIDIA_API_KEY	open list, no cost fields
+open+ids	opencode	95	https://opencode.ai/zen/v1/models	OPENCODE_API_KEY	open list, no cost fields
+open+ids	qiniu-ai	91	https://api.qnaigc.com/v1/models	QINIU_API_KEY	open list, no cost fields
+open+ids	helicone	90	https://ai-gateway.helicone.ai/v1/models	HELICONE_API_KEY	open list, no cost fields
+open+ids	aihubmix	77	https://aihubmix.com/v1/models	AIHUBMIX_API_KEY	open list, no cost fields
+open+ids	opencode-go	33	https://opencode.ai/zen/go/v1/models	OPENCODE_API_KEY	open list, no cost fields
+open+ids	unorouter	23	https://api.unorouter.com/v1/models	UNOROUTER_API_KEY	open list, no cost fields
+open+ids	ollama-cloud	22	https://ollama.com/v1/models	OLLAMA_API_KEY	open list, no cost fields
+open+ids	regolo-ai	18	https://api.regolo.ai/v1/models	REGOLO_API_KEY	open list, no cost fields
+open+ids	cline-pass	13	https://api.cline.bot/api/v1/models	CLINE_API_KEY	open list, no cost fields
+open+ids	alibaba-coding-plan	12	https://coding-intl.dashscope.aliyuncs.com/v1/models	ALIBABA_CODING_PLAN_API_KEY	open list, no cost fields
+open+ids	alibaba-coding-plan-cn	12	https://coding.dashscope.aliyuncs.com/v1/models	ALIBABA_CODING_PLAN_API_KEY	open list, no cost fields
+open+ids	aiand	11	https://api.aiand.com/v1/models	AIAND_API_KEY	open list, no cost fields
+open+ids	freemodel	10	https://cc.freemodel.dev/v1/models	FREEMODEL_API_KEY	open list, no cost fields
+open+ids	above	9	https://api.above.dev/v1/models	ABOVE_API_KEY	open list, no cost fields
+open+ids	inference	9	https://api.inference.net/v1/models	INFERENCE_API_KEY	open list, no cost fields
+open+ids	modelscope	7	https://api-inference.modelscope.cn/v1/models	MODELSCOPE_API_KEY	open list, no cost fields
+open+ids	watsonx	5	https://us-south.ml.cloud.ibm.com/ml/v1/foundation_model_specs?version=2024-05-01	WATSONX_AI_APIKEY, WATSONX_AI_PROJECT_ID	open list, no cost fields
+open+ids	lucidquery	4	https://api.lucidquery.com/v1/models	LUCIDQUERY_API_KEY	open list, no cost fields
+open+ids	moark	2	https://moark.com/v1/models	MOARK_API_KEY	open list, no cost fields
+open+ids	sarvam	2	https://api.sarvam.ai/v1/models	SARVAM_API_KEY	open list, no cost fields
+open+ids	subconscious	2	https://api.subconscious.dev/v1/models	SUBCONSCIOUS_API_KEY	open list, no cost fields
+open+ids	echo	1	https://echo.tracerml.ai/v1/models	ECHO_API_KEY	open list, no cost fields
+open+ids	standardcompute	1	https://api.stdcmpt.com/v1/models	STANDARDCOMPUTE_API_KEY	open list, no cost fields
+open+ids	zenifra	1	https://ai.zenifra.com/v1/models	ZENIFRA_AI_KEY	open list, no cost fields
+keyed	302ai	97	https://api.302.ai/v1/models	302AI_API_KEY	HTTP 401
+keyed	alibaba-cn	87	https://dashscope.aliyuncs.com/compatible-mode/v1/models	DASHSCOPE_API_KEY	HTTP 401
+keyed	siliconflow-cn	77	https://api.siliconflow.cn/v1/models	SILICONFLOW_CN_API_KEY	HTTP 401
+keyed	alibaba	55	https://dashscope-intl.aliyuncs.com/compatible-mode/v1/models	DASHSCOPE_API_KEY	HTTP 401
+keyed	siliconflow	49	https://api.siliconflow.com/v1/models	SILICONFLOW_API_KEY	HTTP 401
+keyed	opper	40	https://api.opper.ai/v3/compat/models	OPPER_API_KEY	HTTP 401
+keyed	togetherai	38	https://api.together.xyz/v1/models	TOGETHER_API_KEY	HTTP 401
+keyed	greenpt	37	https://api.greenpt.ai/v1/models	GREENPT_API_KEY	HTTP 401
+keyed	mistral	34	https://api.mistral.ai/v1/models	MISTRAL_API_KEY	HTTP 401
+keyed	nebius	34	https://api.tokenfactory.nebius.com/v1/models	NEBIUS_API_KEY	HTTP 401
+keyed	anyapi	30	https://api.anyapi.ai/v1/models	ANYAPI_API_KEY	HTTP 401
+keyed	alibaba-token-plan	26	https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1/models	ALIBABA_TOKEN_PLAN_API_KEY	HTTP 401
+keyed	alibaba-token-plan-cn	26	https://token-plan.cn-beijing.maas.aliyuncs.com/compatible-mode/v1/models	ALIBABA_TOKEN_PLAN_API_KEY	HTTP 401
+keyed	frogbot	26	https://app.frogbot.ai/api/v1/models	FROGBOT_API_KEY	HTTP 401
+keyed	tensorx	25	https://api.tensorx.ai/v1/models	TENSORX_API_KEY	HTTP 401
+keyed	perplexity-agent	22	https://api.perplexity.ai/v1/models	PERPLEXITY_API_KEY	HTTP 401
+keyed	vivgrid	22	https://api.vivgrid.com/v1/models	VIVGRID_API_KEY	HTTP 401
+keyed	fireworks-ai	18	https://api.fireworks.ai/inference/v1/models	FIREWORKS_API_KEY	HTTP 401
+keyed	jalapeno	17	https://api.jalapeno-cloud.ai/v1/models	JALAPENO_API_KEY	HTTP 403
+keyed	scnet-token-plan	17	https://api.scnet.cn/api/llm/v1/models	SCNET_API_KEY	HTTP 400
+keyed	evroc	16	https://models.think.evroc.com/v1/models	EVROC_API_KEY	HTTP 401
+keyed	groq	16	https://api.groq.com/openai/v1/models	GROQ_API_KEY	HTTP 401
+keyed	zai	16	https://api.z.ai/api/paas/v4/models	ZHIPU_API_KEY	HTTP 401
+keyed	zhipuai	16	https://open.bigmodel.cn/api/paas/v4/models	ZHIPU_API_KEY	HTTP 401
+keyed	auriko	15	https://api.auriko.ai/v1/models	AURIKO_API_KEY	HTTP 401
+keyed	gmicloud	15	https://api.gmi-serving.com/v1/models	GMICLOUD_API_KEY	HTTP 401
+keyed	model-oracle-ai	15	https://api.modeloracle.com/api/v1/models	MODEL_ORACLE_API_KEY	HTTP 401
+keyed	scaleway	15	https://api.scaleway.ai/v1/models	SCALEWAY_API_KEY	HTTP 401
+keyed	volcengine	15	https://ark.cn-beijing.volces.com/api/v3/models	ARK_API_KEY	HTTP 401
+keyed	cohere	14	https://api.cohere.com/v1/models	COHERE_API_KEY	HTTP 401
+keyed	tokengo	13	https://api.tokengo.com/v1/models	TOKENGO_API_KEY	HTTP 401
+keyed	inferx	12	https://model.inferx.net/endpoints/v1/models	INFERX_API_KEY	HTTP 401
+keyed	zhipuai-coding-plan	11	https://open.bigmodel.cn/api/coding/paas/v4/models	ZHIPU_API_KEY	HTTP 401
+keyed	moonshotai	10	https://api.moonshot.ai/v1/models	MOONSHOT_API_KEY	HTTP 401
+keyed	moonshotai-cn	10	https://api.moonshot.cn/v1/models	MOONSHOT_API_KEY	HTTP 401
+keyed	vancine	10	https://vancine.com/v1/models	VANCINE_API_KEY	HTTP 401
+keyed	daoxe	9	https://daoxe.com/v1/models	DAOXE_API_KEY	HTTP 401
+keyed	hpc-ai	9	https://api.hpc-ai.com/inference/v1/models	HPC_AI_API_KEY	HTTP 401
+keyed	modelis	9	https://modelishub.com/v1/models	MODELIS_API_KEY	HTTP 401
+keyed	qihang-ai	9	https://api.qhaigc.net/v1/models	QIHANG_API_KEY	HTTP 401
+keyed	submodel	9	https://llm.submodel.ai/v1/models	SUBMODEL_INSTAGEN_ACCESS_KEY	200 but empty data[] without a key
+keyed	crusoe	8	https://api.inference.crusoecloud.com/v1/models	CRUSOE_API_KEY	HTTP 401
+keyed	stackit	8	https://api.openai-compat.model-serving.eu01.onstackit.cloud/v1/models	STACKIT_API_KEY	HTTP 403
+keyed	stepfun	8	https://api.stepfun.com/v1/models	STEPFUN_API_KEY	HTTP 401
+keyed	stepfun-ai	8	https://api.stepfun.ai/v1/models	STEPFUN_API_KEY	HTTP 401
+keyed	tencent-coding-plan	8	https://api.lkeap.cloud.tencent.com/coding/v3/models	TENCENT_CODING_PLAN_API_KEY	HTTP 401
+keyed	volcengine-coding-plan	8	https://ark.cn-beijing.volces.com/api/coding/v3/models	ARK_CODING_PLAN_API_KEY	HTTP 401
+keyed	aki-io	7	https://aki.io/v1/models	AKI_IO_API_KEY	HTTP 401
+keyed	arcee	7	https://api.arcee.ai/api/v1/models	ARCEE_API_KEY	HTTP 401
+keyed	llama	7	https://api.llama.com/compat/v1/models	LLAMA_API_KEY	HTTP 401
+keyed	minimax	7	https://api.minimax.io/anthropic/v1/models	MINIMAX_API_KEY	HTTP 401
+keyed	minimax-cn	7	https://api.minimaxi.com/anthropic/v1/models	MINIMAX_API_KEY	HTTP 401
+keyed	minimax-cn-coding-plan	7	https://api.minimaxi.com/anthropic/v1/models	MINIMAX_API_KEY	HTTP 401
+keyed	minimax-coding-plan	7	https://api.minimax.io/anthropic/v1/models	MINIMAX_API_KEY	HTTP 401
+keyed	runinfra	7	https://api.runinfra.ai/v1/models	RUNINFRA_GATEWAY_KEY	HTTP 401
+keyed	xiaomi-token-plan-ams	7	https://token-plan-ams.xiaomimimo.com/v1/models	XIAOMI_API_KEY	HTTP 401
+keyed	xiaomi-token-plan-cn	7	https://token-plan-cn.xiaomimimo.com/v1/models	XIAOMI_API_KEY	HTTP 401
+keyed	xiaomi-token-plan-sgp	7	https://token-plan-sgp.xiaomimimo.com/v1/models	XIAOMI_API_KEY	HTTP 401
+keyed	zai-coding-plan	7	https://api.z.ai/api/coding/paas/v4/models	ZHIPU_API_KEY	HTTP 401
+keyed	dinference	6	https://api.dinference.com/v1/models	DINFERENCE_API_KEY	HTTP 401
+keyed	pendra	6	https://api.pendra.ai/api/v1/models	PENDRA_API_KEY	HTTP 401
+keyed	xiaomi	6	https://api.xiaomimimo.com/v1/models	XIAOMI_API_KEY	HTTP 401
+keyed	ai-router	5	https://api.ai-router.dev/v1/models	AI_ROUTER_API_KEY	HTTP 401
+keyed	cloudferro-sherlock	5	https://api-sherlock.cloudferro.com/openai/v1/models	CLOUDFERRO_SHERLOCK_API_KEY	HTTP 401
+keyed	mixlayer	5	https://models.mixlayer.ai/v1/models	MIXLAYER_API_KEY	HTTP 401
+keyed	ebcloud	4	https://maas-api.ebcloud.com/v1/models	EBCLOUD_API_KEY	HTTP 401
+keyed	kimi-for-coding	4	https://api.kimi.com/coding/v1/models	KIMI_API_KEY	HTTP 401
+keyed	modal	4	https://inference.us-west.modal.direct/v1/models	MODAL_PROXY_TOKEN	HTTP 401
+keyed	neosmith	4	https://router.neosmith.ai/v1/models	NEOSMITH_API_KEY	HTTP 401
+keyed	perplexity	4	https://api.perplexity.ai/v1/models	PERPLEXITY_API_KEY	HTTP 401
+keyed	sakana	4	https://api.sakana.ai/v1/models	SAKANA_API_KEY	HTTP 401
+keyed	scx-ai	4	https://api.scx.ai/v1/models	SCX_API_KEY	HTTP 401
+keyed	stepfun-step-plan	4	https://api.stepfun.com/step_plan/v1/models	STEPFUN_API_KEY	HTTP 401
+keyed	upstage	4	https://api.upstage.ai/v1/solar/models	UPSTAGE_API_KEY	HTTP 401
+keyed	abliteration-ai	3	https://api.abliteration.ai/v1/models	ABLIT_KEY	HTTP 401
+keyed	agnes	3	https://apihub.agnes-ai.com/v1/models	AGNES_API_KEY	HTTP 401
+keyed	coralbricks	3	https://inference.coralbricks.ai/v1/models	CORAL_API_KEY	HTTP 401
+keyed	deepseek	3	https://api.deepseek.com/models	DEEPSEEK_API_KEY	HTTP 401
+keyed	drun	3	https://chat.d.run/v1/models	DRUN_API_KEY	HTTP 401
+keyed	klokintegration	3	https://api-gw.klok.ipaas.se/proxy/kloker-key/v1/models	KLOKINTEGRATION_API_KEY	HTTP 401
+keyed	meta	3	https://api.meta.ai/v1/models	META_MODEL_API_KEY	HTTP 401
+keyed	morph	3	https://api.morphllm.com/v1/models	MORPH_API_KEY	HTTP 401
+keyed	openreason	3	https://api.openreason.app/v1/models	OPENREASON_API_KEY	HTTP 401
+keyed	poolside	3	https://inference.poolside.ai/v1/models	POOLSIDE_API_KEY	HTTP 401
+keyed	sensenova	3	https://token.sensenova.cn/v1/models	SENSENOVA_API_KEY	HTTP 401
+keyed	stepfun-ai-step-plan	3	https://api.stepfun.ai/step_plan/v1/models	STEPFUN_API_KEY	HTTP 401
+keyed	tencent-tokenhub	3	https://tokenhub.tencentmaas.com/v1/models	TENCENT_TOKENHUB_API_KEY	HTTP 401
+keyed	amd	2	https://developer.amd.com.cn/radeon/api/v1/models	AMD_API_KEY	HTTP 401
+keyed	bailing	2	https://api.tbox.cn/api/llm/v1/chat/completions/models	BAILING_API_TOKEN	auth token required (SDK_TOKEN_NOT_FOUND)
+keyed	blueclaw	2	https://openai.blueclaw.network/v1/models	BLUECLAW_API_KEY	HTTP 401
+keyed	bothub	2	https://openai.bothub.ru/v1/models	BOTHUB_API_KEY	HTTP 401
+keyed	cerebras	2	https://api.cerebras.ai/v1/models	CEREBRAS_API_KEY	HTTP 403
+keyed	claudinio	2	https://api.claudin.io/v1/models	CLAUDINIO_API_KEY	HTTP 401
+keyed	hetzner	2	https://inference.hetzner.com/api/v1/models	HETZNER_API_KEY	HTTP 401
+keyed	tencent-token-plan	2	https://api.lkeap.cloud.tencent.com/plan/v3/models	TENCENT_TOKEN_PLAN_API_KEY	HTTP 401
+keyed	aixy	1	https://api.aixy-gateway.com/v1/models	AIXY_API_KEY	HTTP 401
+keyed	longcat	1	https://api.longcat.chat/openai/models	LONGCAT_API_KEY	HTTP 401
+keyed	tokenrouter	1	https://api.tokenrouter.com/v1/models	TOKENROUTER_API_KEY	HTTP 401
+scoped	amazon-bedrock	123		AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION, AWS_BEARER_TOKEN_BEDROCK	AWS ListFoundationModels, SigV4 + per-region
+scoped	azure	85		AZURE_RESOURCE_NAME, AZURE_API_KEY	per-resource deployment catalog
+scoped	azure-cognitive-services	74		AZURE_COGNITIVE_SERVICES_RESOURCE_NAME, AZURE_COGNITIVE_SERVICES_API_KEY	per-resource deployment catalog
+scoped	sap-ai-core	48		AICORE_SERVICE_KEY	tenant-scoped
+scoped	google-vertex	44		GOOGLE_VERTEX_PROJECT, GOOGLE_VERTEX_LOCATION, GOOGLE_APPLICATION_CREDENTIALS	project/region-scoped publisher API
+scoped	neon	42	${NEON_AI_GATEWAY_BASE_URL}/v1	NEON_AI_GATEWAY_BASE_URL, NEON_AI_GATEWAY_TOKEN	project-scoped
+scoped	databricks	30	https://${DATABRICKS_HOST}/ai-gateway/mlflow/v1	DATABRICKS_HOST, DATABRICKS_TOKEN	workspace host (DATABRICKS_HOST)
+scoped	snowflake-cortex	25	https://${SNOWFLAKE_ACCOUNT}.snowflakecomputing.com/api/v2/cortex/v1	SNOWFLAKE_ACCOUNT, SNOWFLAKE_CORTEX_PAT	account-scoped
+scoped	gitlab	23		GITLAB_TOKEN	no public model list (404)
+scoped	google-vertex-anthropic	14		GOOGLE_VERTEX_PROJECT, GOOGLE_VERTEX_LOCATION, GOOGLE_APPLICATION_CREDENTIALS	project/region-scoped publisher API
+scoped	clarifai	12	https://api.clarifai.com/v2/ext/openai/v1/models	CLARIFAI_PAT	unverified: proxy 502 from this session
+scoped	infomaniak	10	https://api.infomaniak.com/2/ai/${INFOMANIAK_PRODUCT_ID}/openai/v1	INFOMANIAK_API_KEY, INFOMANIAK_PRODUCT_ID	product-id scoped
+scoped	v0	3		V0_API_KEY	no /v1/models (404)
+scoped	salad-cloud	1		SALAD_CLOUD_API_KEY	org-scoped (404 on public path)
+local	qvac	9		QVAC_API_KEY	no public host
+local	privatemode-ai	7	http://localhost:8080/v1/models	PRIVATEMODE_API_KEY, PRIVATEMODE_ENDPOINT	localhost:8080 (local runtime)
+local	atomic-chat	5	http://127.0.0.1:1337/v1/models	ATOMIC_CHAT_API_KEY	127.0.0.1:1337 (local runtime)
+local	lmstudio	3	http://127.0.0.1:1234/v1/models	LMSTUDIO_API_KEY	127.0.0.1:1234 (local runtime)
+local	lynkr	1	http://127.0.0.1:8081/v1/models	LYNKR_API_KEY	127.0.0.1:8081 (local runtime)
+broken	iflowcn	14	https://apis.iflow.cn/v1/models	IFLOW_API_KEY	apis.iflow.cn 404 on /v1/models and /models
+broken	agentrouter	3	https://agentrouter.org/v1/models	AGENTROUTER_API_KEY	Aliyun WAF challenge, not an API response
+broken	nova	2	https://api.nova.amazon.com/v1/models	NOVA_API_KEY	api.nova.amazon.com 500 and 404
+broken	thinkingmachines	2	https://tinker.thinkingmachines.dev/services/tinker-prod/anthropic/api/v1/models	TINKER_API_KEY	Tinker exposes no model-list route
+broken	kuae-cloud-coding-plan	1	https://coding-plan-endpoint.kuaecloud.net/v1/models	KUAE_API_KEY	coding-plan-endpoint.kuaecloud.net 404
+broken	zeldoc	1	https://api.zeldoc.ai/v1/models	ZELDOC_API_KEY	api.zeldoc.ai 500 and 404
