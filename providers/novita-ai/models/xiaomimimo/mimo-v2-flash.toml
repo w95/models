@@ -5,17 +5,17 @@ release_date = "2025-12-19"
 last_updated = "2025-12-19"
 attachment = false
 reasoning = true
-reasoning_options = []
 temperature = true
-knowledge = "2024-12"
 tool_call = true
 structured_output = true
+knowledge = "2024-12"
 open_weights = true
+reasoning_options = []
 
 [cost]
-input = 0.1
-output = 0.3
-cache_read = 0.30
+input = 0.11
+output = 0.33
+cache_read = 0.024
 
 [limit]
 context = 262_144

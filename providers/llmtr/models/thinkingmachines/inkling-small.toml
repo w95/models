@@ -3,14 +3,15 @@
 # Effort: $.reasoning.effort = none|minimal|low|medium|high|xhigh
 base_model = "thinkingmachines/inkling-small"
 
+[[reasoning_options]]
+type = "effort"
+values = ["none", "minimal", "low", "medium", "high", "xhigh"]
+
 [cost]
 input = 0.58
 output = 1.44
+cache_read = 0.116
 
 [limit]
 context = 262_144
 output = 262_144
-
-[[reasoning_options]]
-type = "effort"
-values = ["none", "minimal", "low", "medium", "high", "xhigh"]

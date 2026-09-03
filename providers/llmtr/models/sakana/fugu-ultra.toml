@@ -3,13 +3,14 @@
 # Effort: $.reasoning.effort = high|xhigh
 base_model = "sakana/fugu-ultra"
 
-[cost]
-input = 5
-output = 30
-
-[limit]
-output = 1_000_000
-
 [[reasoning_options]]
 type = "effort"
 values = ["high", "xhigh"]
+
+[cost]
+input = 5
+output = 30
+cache_read = 0.5
+
+[limit]
+output = 1_000_000

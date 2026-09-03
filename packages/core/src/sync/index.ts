@@ -28,6 +28,18 @@ import { mergeGateway } from "./providers/merge-gateway.js";
 import { nanoGpt } from "./providers/nano-gpt.js";
 import { openai } from "./providers/openai.js";
 import { ofox } from "./providers/ofox.js";
+import {
+  crof,
+  impossibl,
+  inception,
+  kosmik,
+  lilac,
+  llmtr,
+  novitaAi,
+  orcarouter,
+  umansAi,
+  xpersona,
+} from "./providers/open-catalog-pricing.js";
 import { openrouter } from "./providers/openrouter.js";
 import { ovhcloud } from "./providers/ovhcloud.js";
 import { pioneer } from "./providers/pioneer.js";
@@ -135,6 +147,7 @@ export const providers: {
   "cloudflare-ai-gateway": SyncProvider<any>;
   "cloudflare-workers-ai": SyncProvider<any>;
   cortecs: SyncProvider<any>;
+  crof: SyncProvider<any>;
   crossmodel: SyncProvider<any>;
   deepinfra: SyncProvider<any>;
   digitalocean: SyncProvider<any>;
@@ -144,23 +157,32 @@ export const providers: {
   google: SyncProvider<any>;
   hyper: SyncProvider<any>;
   huggingface: SyncProvider<any>;
+  impossibl: SyncProvider<any>;
+  inception: SyncProvider<any>;
   inceptron: SyncProvider<any>;
   kilo: SyncProvider<any>;
+  kosmik: SyncProvider<any>;
+  lilac: SyncProvider<any>;
   llmgateway: SyncProvider<any>;
   "llmgateway-providers": SyncProvider<any>;
+  llmtr: SyncProvider<any>;
   "merge-gateway": SyncProvider<any>;
   "nano-gpt": SyncProvider<any>;
+  "novita-ai": SyncProvider<any>;
   ofox: SyncProvider<any>;
   openai: SyncProvider<any>;
   openrouter: SyncProvider<any>;
+  orcarouter: SyncProvider<any>;
   ovhcloud: SyncProvider<any>;
   pioneer: SyncProvider<any>;
   requesty: SyncProvider<any>;
   tinfoil: SyncProvider<any>;
+  "umans-ai": SyncProvider<any>;
   vercel: SyncProvider<any>;
   venice: SyncProvider<any>;
   wandb: SyncProvider<any>;
   xai: SyncProvider<any>;
+  xpersona: SyncProvider<any>;
 } = {
   ambient,
   anthropic,
@@ -169,6 +191,7 @@ export const providers: {
   "cloudflare-ai-gateway": cloudflareAiGateway,
   "cloudflare-workers-ai": cloudflareWorkersAi,
   cortecs,
+  crof,
   crossmodel,
   deepinfra,
   digitalocean,
@@ -178,23 +201,32 @@ export const providers: {
   google,
   hyper,
   huggingface,
+  impossibl,
+  inception,
   inceptron,
   kilo,
+  kosmik,
+  lilac,
   llmgateway,
   "llmgateway-providers": llmgatewayProviders,
+  llmtr,
   "merge-gateway": mergeGateway,
   "nano-gpt": nanoGpt,
+  "novita-ai": novitaAi,
   ofox,
   openai,
   openrouter,
+  orcarouter,
   ovhcloud,
   pioneer,
   requesty,
   tinfoil,
+  "umans-ai": umansAi,
   vercel,
   venice,
   wandb,
   xai,
+  xpersona,
 };
 
 export const groups = {
@@ -216,6 +248,8 @@ export const groups = {
   ],
   cloudflare: ["cloudflare-ai-gateway", "cloudflare-workers-ai"],
   direct: ["ambient", "anthropic", "baseten", "chutes", "cortecs", "deepinfra", "digitalocean", "github-copilot", "google", "hyper", "openai", "ovhcloud", "pioneer", "tinfoil", "venice", "wandb", "xai"],
+  // Open catalogs synced for pricing only; see providers/open-catalog-pricing.ts.
+  pricing: ["crof", "impossibl", "inception", "kosmik", "lilac", "llmtr", "novita-ai", "orcarouter", "umans-ai", "xpersona"],
 } as const;
 
 type ProviderID = keyof typeof providers;

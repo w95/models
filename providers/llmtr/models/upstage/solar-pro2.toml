@@ -9,10 +9,11 @@
 # rather than the wider accepted set.
 base_model = "upstage/solar-pro2"
 
-[cost]
-input = 0.15
-output = 0.6
-
 [[reasoning_options]]
 type = "effort"
 values = ["minimal", "high"]
+
+[cost]
+input = 0.15
+output = 0.6
+cache_read = 0.015
