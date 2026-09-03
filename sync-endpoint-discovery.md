@@ -242,3 +242,83 @@ prices cannot be confirmed without a key.
 | `thinkingmachines` | 2 | `https://tinker.thinkingmachines.dev/services/tinker-prod/anthropic/api/v1/models` | Tinker exposes no model-list route |
 | `kuae-cloud-coding-plan` | 1 | `https://coding-plan-endpoint.kuaecloud.net/v1/models` | coding-plan-endpoint.kuaecloud.net 404 |
 | `zeldoc` | 1 | `https://api.zeldoc.ai/v1/models` | api.zeldoc.ai 500 and 404 |
+
+## Implemented: pricing-only sync for ten open catalogs
+
+`packages/core/src/sync/providers/open-catalog-pricing.ts` adds a `SyncProvider` factory for catalogs that
+publish prices openly. Each instance refreshes `cost` on files a human already authored and touches nothing
+else: `skipCreates` (the catalogs carry prices, not the metadata a new file needs), `deleteMissing: false`
+(a price feed is not a lifecycle feed) and `trackMissingModels: false` (one issue per remote-only ID would
+bury the tracker — TrustedRouter alone lists 623).
+
+Registered and grouped as `bun models:sync pricing`: `orcarouter`, `novita-ai`, `impossibl`, `llmtr`,
+`xpersona`, `umans-ai`, `crof`, `lilac`, `inception`, `kosmik` — 382 model files, of which 350 match a
+catalog ID exactly.
+
+Each extractor was validated against the prices already in the repository before being wired up; only
+providers agreeing with hand-authored values on **95%+ of overlapping models** were included. The first run
+updates 25 files and is idempotent on the second.
+
+### Excluded, with reasons
+
+| Provider | Files | Why not |
+|---|---:|---|
+| `poe` | 137 | Catalog IDs are Poe bot names; zero overlap with the vendor-scoped local paths |
+| `zenmux` | 120 | Authored prices are consistently 2x the catalog's on 27 of 82 overlaps — unexplained |
+| `jiekou` | 61 | Catalog runs promotions; authored values sit between `price_per_m` and `origin_price_per_m` |
+| `kenari` | 59 | Prices quoted in IDR |
+| `neuralwatt` | 21 | No price fields on any model |
+| `io-net` | 17 | Per-token fields disagree with every authored value |
+| `routing-run` | 15 | Extracted values disagree with authored ones by an inconsistent factor |
+| `berget` | 11 | Prices quoted in EUR |
+| `vultr` | 10 | No price fields on any model |
+| `umans-ai-coding-plan` | 8 | Subscription plan: `cost` is deliberately 0, syncing would invent prices |
+| `wafer.ai` | 5 | No price fields on any model |
+| `iteracompute` | 2 | No price fields on any model |
+| `meganova`, `fastrouter`, `nearai`, `synthetic`, `friendli` | 87 | 71-90% agreement — worth a second look, not yet trustworthy |
+
+### Known trade-off: mid-file comments
+
+These providers are now sync-owned, and per `AGENTS.md` a re-serialized file keeps only its leading comment
+block. 35 of the 382 files carry a comment after the first value line and will lose it the next time
+their price changes. One was lost in the first run (`providers/impossibl/models/google/gemini-3.6-flash.toml`)
+and has been restored by hand. Hoisting these above the first key, as `AGENTS.md` prescribes, is a follow-up:
+
+```
+providers/novita-ai/models/qwen/qwen3-omni-30b-a3b-instruct.toml
+providers/novita-ai/models/qwen/qwen3-omni-30b-a3b-thinking.toml
+providers/impossibl/models/anthropic/claude-fable-5.toml
+providers/impossibl/models/anthropic/claude-haiku-4-5.toml
+providers/impossibl/models/anthropic/claude-opus-4-5.toml
+providers/impossibl/models/anthropic/claude-opus-4-6.toml
+providers/impossibl/models/anthropic/claude-opus-4-7.toml
+providers/impossibl/models/anthropic/claude-opus-4-8.toml
+providers/impossibl/models/anthropic/claude-sonnet-4-5.toml
+providers/impossibl/models/anthropic/claude-sonnet-4-6.toml
+providers/impossibl/models/anthropic/claude-sonnet-5.toml
+providers/impossibl/models/google/gemini-2.5-flash-lite.toml
+providers/impossibl/models/google/gemini-2.5-flash.toml
+providers/impossibl/models/google/gemini-2.5-pro.toml
+providers/impossibl/models/google/gemini-3.1-flash-lite.toml
+providers/impossibl/models/google/gemini-3.1-pro-preview.toml
+providers/impossibl/models/google/gemini-3.5-flash-lite.toml
+providers/impossibl/models/google/gemini-3.5-flash.toml
+providers/impossibl/models/google/gemini-3.6-flash.toml
+providers/impossibl/models/qwen/qwen3.6-flash.toml
+providers/impossibl/models/qwen/qwen3.7-max.toml
+providers/impossibl/models/qwen/qwen3.7-plus.toml
+providers/impossibl/models/zai/glm-4.5-air.toml
+providers/impossibl/models/zai/glm-4.5.toml
+providers/impossibl/models/zai/glm-4.6.toml
+providers/impossibl/models/zai/glm-4.7.toml
+providers/impossibl/models/zai/glm-5-turbo.toml
+providers/impossibl/models/zai/glm-5.1.toml
+providers/impossibl/models/zai/glm-5.toml
+providers/umans-ai/models/umans-coder.toml
+providers/umans-ai/models/umans-flash.toml
+providers/umans-ai/models/umans-glm-5.2.toml
+providers/umans-ai/models/umans-kimi-k2.7.toml
+providers/inception/models/mercury-2.toml
+providers/inception/models/mercury-edit-2.toml
+```
+
