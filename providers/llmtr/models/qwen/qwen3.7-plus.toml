@@ -6,12 +6,14 @@
 # The bare `$.reasoning` boolean also toggles thinking here, but `enable_thinking` is the lab-native field and is documented instead for consistency across these routes.
 base_model = "alibaba/qwen3.7-plus"
 
-[cost]
-input = 0.4
-output = 1.6
-
 [[reasoning_options]]
 type = "toggle"
 
 [[reasoning_options]]
 type = "budget_tokens"
+
+[cost]
+input = 0.4
+output = 1.6
+cache_read = 0.04
+cache_write = 0.5

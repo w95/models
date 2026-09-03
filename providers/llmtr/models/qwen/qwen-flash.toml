@@ -6,12 +6,14 @@
 # The bare `$.reasoning` boolean is inert on this route (no reasoning output with it set); `enable_thinking` is the control that works.
 base_model = "alibaba/qwen-flash"
 
-[cost]
-input = 0.05
-output = 0.4
-
 [[reasoning_options]]
 type = "toggle"
 
 [[reasoning_options]]
 type = "budget_tokens"
+
+[cost]
+input = 0.05
+output = 0.4
+cache_read = 0.005
+cache_write = 0.063

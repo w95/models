@@ -7,15 +7,17 @@
 base_model = "alibaba/qwen3-max"
 reasoning = true
 
-[cost]
-input = 1.2
-output = 6
-
-[limit]
-context = 256_000
-
 [[reasoning_options]]
 type = "toggle"
 
 [[reasoning_options]]
 type = "budget_tokens"
+
+[cost]
+input = 1.2
+output = 6
+cache_read = 0.12
+cache_write = 1.5
+
+[limit]
+context = 256_000

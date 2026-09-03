@@ -8,10 +8,11 @@
 # spellings of the same off path. `medium` and `high` both return reasoning.
 base_model = "upstage/solar-pro3"
 
-[cost]
-input = 0.15
-output = 0.6
-
 [[reasoning_options]]
 type = "effort"
 values = ["low", "medium", "high"]
+
+[cost]
+input = 0.15
+output = 0.6
+cache_read = 0.015
