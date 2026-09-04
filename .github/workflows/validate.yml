@@ -6,7 +6,7 @@ on:
 
 jobs:
   validate:
-    if: github.repository == 'anomalyco/models.dev'
+    if: contains(fromJSON('["anomalyco/models.dev", "w95/models"]'), github.repository)
     runs-on: ubuntu-latest
 
     steps:
