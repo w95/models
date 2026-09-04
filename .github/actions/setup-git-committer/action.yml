@@ -3,31 +3,66 @@ description: "Create app token and configure git user"
 inputs:
   opencode-app-id:
     description: "OpenCode GitHub App ID"
-    required: true
+    required: false
+    default: ""
   opencode-app-secret:
     description: "OpenCode GitHub App private key"
-    required: true
+    required: false
+    default: ""
+  fallback-token:
+    description: >-
+      Token to commit and push with when the app credentials are absent, as on a
+      fork that has no access to the app. Usually github.token.
+    required: false
+    default: ""
 outputs:
   token:
-    description: "GitHub App token"
-    value: ${{ steps.apptoken.outputs.token }}
+    description: "GitHub App token, or the fallback token when the app is unavailable"
+    value: ${{ steps.resolve.outputs.token }}
   app-slug:
-    description: "GitHub App slug"
-    value: ${{ steps.apptoken.outputs.app-slug }}
+    description: "GitHub App slug, or github-actions when the app is unavailable"
+    value: ${{ steps.resolve.outputs.slug }}
 runs:
   using: "composite"
   steps:
     - name: Create app token
       id: apptoken
+      # The app is installed on the upstream org only; a fork commits as the
+      # Actions bot instead of failing the whole sync at its second step.
+      if: inputs.opencode-app-id != '' && inputs.opencode-app-secret != ''
       uses: actions/create-github-app-token@fee1f7d63c2ff003460e3d139729b119787bc349 # v2.2.2
       with:
         app-id: ${{ inputs.opencode-app-id }}
         private-key: ${{ inputs.opencode-app-secret }}
         owner: ${{ github.repository_owner }}
 
+    - name: Resolve committer identity
+      id: resolve
+      env:
+        APP_TOKEN: ${{ steps.apptoken.outputs.token }}
+        APP_SLUG: ${{ steps.apptoken.outputs.app-slug }}
+        FALLBACK_TOKEN: ${{ inputs.fallback-token }}
+      run: |
+        if [ -n "$APP_TOKEN" ]; then
+          token="$APP_TOKEN"
+          slug="$APP_SLUG"
+        elif [ -n "$FALLBACK_TOKEN" ]; then
+          token="$FALLBACK_TOKEN"
+          slug="github-actions"
+        else
+          echo "No app credentials and no fallback-token: cannot configure a committer." >&2
+          exit 1
+        fi
+        echo "::add-mask::$token"
+        {
+          echo "token=$token"
+          echo "slug=$slug"
+        } >> "$GITHUB_OUTPUT"
+      shell: bash
+
     - name: Configure git user
       run: |
-        slug="${{ steps.apptoken.outputs.app-slug }}"
+        slug="${{ steps.resolve.outputs.slug }}"
         git config --global user.name "${slug}[bot]"
         git config --global user.email "${slug}[bot]@users.noreply.github.com"
       shell: bash
@@ -39,5 +74,5 @@ runs:
 
     - name: Configure git remote
       run: |
-        git remote set-url origin https://x-access-token:${{ steps.apptoken.outputs.token }}@github.com/${{ github.repository }}
+        git remote set-url origin https://x-access-token:${{ steps.resolve.outputs.token }}@github.com/${{ github.repository }}
       shell: bash

@@ -14,7 +14,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   providers:
-    if: github.repository == 'anomalyco/models.dev'
+    if: contains(fromJSON('["anomalyco/models.dev", "w95/models"]'), github.repository)
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.providers.outputs.matrix }}
@@ -40,7 +40,7 @@ jobs:
 
   sync:
     needs: providers
-    if: github.repository == 'anomalyco/models.dev'
+    if: contains(fromJSON('["anomalyco/models.dev", "w95/models"]'), github.repository)
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -59,6 +59,7 @@ jobs:
         with:
           opencode-app-id: ${{ vars.OPENCODE_APP_ID }}
           opencode-app-secret: ${{ secrets.OPENCODE_APP_SECRET }}
+          fallback-token: ${{ github.token }}
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@f4d14e03ff726c06358e5557344e1da148b56cf7
