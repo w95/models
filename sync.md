@@ -6,6 +6,38 @@ Model syncs are centralized in `packages/core/src/sync/index.ts`. The runner own
 
 The grouped sync targets are available for local convenience, but CI syncs each provider separately so every provider gets its own reusable automation PR.
 
+## Running everything without CI
+
+`bun run sync:all` syncs every registered provider in one process, for a cron job or an API call
+instead of a GitHub Actions matrix. It writes files and nothing else — no commits, no branches, no
+pull requests, and no `gh` calls (missing-model issue opening stays off).
+
+- `bun run sync:all` — every provider.
+- `bun run sync:all pricing` — one group, or name individual providers: `bun run sync:all crof lilac`.
+- `bun run sync:all --dry-run` — report what would change without writing.
+- `bun run sync:all --json` — the full report on stdout, for an API caller.
+
+Each provider is isolated: one that throws is recorded and the run continues, unlike
+`bun models:sync <group>`, where the first failure aborts the rest. Providers whose credentials are
+absent are **skipped**, not failed, so a partial `.env` still gives a clean run.
+
+Credentials come from a `.env` file in the repo root, which Bun loads at start-up. That is also
+where `HTTPS_PROXY` / `NODE_EXTRA_CA_CERTS` belong if the host needs them. Because `.env` is read
+from the current directory before any code runs, the script refuses to start anywhere but the repo
+root rather than silently skipping every keyed provider.
+
+Every run overwrites `.sync/sync-all.json` with the full report. Exit codes: `0` all good (skips
+included), `1` at least one provider failed, `2` the catalog no longer validates — meaning files
+were already written and one of them is bad.
+
+```cron
+17 * * * * cd /path/to/models && timeout 20m bun run sync:all >> .sync/cron.log 2>&1
+```
+
+The `timeout` is deliberate: the sync modules pass no `AbortSignal`, so a hung request is best cut
+off by the caller rather than raced in-process, where the loser would keep running and could write
+files after validation had already passed.
+
 ## Commands
 
 - `bun models:sync aggregators` syncs every provider in the `aggregators` group.

@@ -41,7 +41,8 @@
     "ambient:sync": "bun ./packages/core/script/sync-models.ts ambient",
     "models:sync": "bun ./packages/core/script/sync-models.ts",
     "sync:models": "bun ./packages/core/script/sync-models.ts",
-    "sync:auto-merge": "bun ./packages/core/script/check-sync-auto-merge.ts"
+    "sync:auto-merge": "bun ./packages/core/script/check-sync-auto-merge.ts",
+    "sync:all": "bun ./packages/core/script/sync-all.ts"
   },
   "dependencies": {
     "@cloudflare/workers-types": "^4.20260424.1",
